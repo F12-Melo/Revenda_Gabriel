@@ -22,7 +22,8 @@ GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO toledo;
 
 --8°cmd
 CREATE USER auxiliar WITH PASSWORD 'auxiliar1';
-GRANT SELECT ON clientes TO auxiliar;
+GRANT SELECT on clientes to 'auxiliar'@'localhost';
+select 'colega com permissão de select na table select' as status;
 
 --ala dos joins
 -- INNER JOIN
@@ -70,3 +71,4 @@ WHERE nota < 3;
 UPDATE avaliacoes 
 SET comentario = NULL 
 WHERE nota < 3;
+
